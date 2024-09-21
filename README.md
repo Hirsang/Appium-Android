@@ -1,3 +1,7 @@
+TEST AUTOMATION MOBILE - TOKOPEDIA.APK
+by : Hirsang Whisnu
+
+
 1. Install Homebrew (if not installed)
 Homebrew is a package manager that simplifies the installation of software on macOS. Open Terminal and run:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
