@@ -1,0 +1,28 @@
+{
+  "name": "appium-android",
+  "version": "1.0.0",
+  "description": "Automation script for Android using WebdriverIO and Allure",
+  "main": "tokopedia.js",
+  "scripts": {
+  "clean:allure": "rm -rf allure-results && mkdir allure-results",
+  "test": "npm run clean:allure && wdio run wdio.conf.js && allure generate --clean",
+  "report": "allure generate --clean && allure open"
+  },
+  "author": "hirsang",
+  "license": "ISC",
+  "devDependencies": {
+    "@wdio/allure-reporter": "^9.0.8",
+    "@wdio/appium-service": "^9.0.9",
+    "@wdio/cli": "^9.0.9",
+    "@wdio/local-runner": "^9.0.9",
+    "@wdio/mocha-framework": "^9.0.8",
+    "@wdio/selenium-standalone-service": "^8.14.0",
+    "@wdio/spec-reporter": "^9.0.8",
+    "allure-commandline": "^2.30.0",
+    "allure-mocha": "^3.0.1",
+    "appium": "^2.11.4",
+    "appium-uiautomator2-driver": "^3.8.0",
+    "wdio-html-reporter": "^1.0.2",
+    "webdriverio": "^9.0.9"
+  }
+}
