@@ -53,6 +53,7 @@ TEST AUTOMATION MOBILE - TOKOPEDIA.APK
    appium (normal port)
    appium -p4725 --allow-cors (port 4725)
 
-10. Run script
-    node tokopedia.js
+10. Run script & Run Report
+    npm run test
+    npm run report
 
