@@ -53,6 +53,15 @@ class Product{
     async detailseller(){
         await this.driver.$('android=new UiScrollable(new UiSelector().scrollable(true)).scrollIntoView(new UiSelector().resourceId("com.tokopedia.tkpd.df_base:id/shop_credibility_name"))').click();
     }
+
+    async shareproduct(){
+        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/icon").instance(1)').click();
+
+    }
+
+    async sharelink(){
+        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/shareex_icon_channel").instance(2)').click();
+    }
 }
 
 module.exports={

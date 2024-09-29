@@ -19,6 +19,10 @@ class Seller{
         await this.driver.$('android=new UiSelector().text("Filter")').click();
     }
 
+    async BackToProduct(){
+        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/nav_icon_back")').click();
+    }
+
 }
 
 module.exports= Seller;

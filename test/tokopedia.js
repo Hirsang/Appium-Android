@@ -20,11 +20,10 @@ describe('Tokopedia Search and Product Flow', function() {
         filterproduct = new FilterProduct(driver);
         console.log('Aplikasi Dibuka!');
     });
+    addFeature('Feature: Tokopedia Search and Product Flow');
+    addStory('Story: User Onboarding, Searching, and Filtering Products');
 
     it('should complete the onboarding flow', async function() {
-        addFeature('Feature: Tokopedia Search and Product Flow');
-        addStory('Story: User Onboarding, Searching, and Filtering Products');
-
         addStep('Step 1: Onboarding flow');
         await onboarding.clickOnboardingButton();
         await onboarding.AllowPermissionPhone();
@@ -55,10 +54,22 @@ describe('Tokopedia Search and Product Flow', function() {
 
     it('should filter products', async function() {
         addStep('Step 5: Filtering products');
+        await seller.Getfilter();
         await filterproduct.category();
+        await seller.Getfilter();
+        await filterproduct.price();
+        await filterproduct.submitfilter();
+        await seller.BackToProduct();
     });
 
+    it('should share product', async function(){
+        addStep('Step 6: sahre products');
+        await product.shareproduct();
+        await product.sharelink();
+    })
+
     after(async function() {
+        await driver.pause(2000)
         await driver.deleteSession();
         console.log('Sesi dihentikan!');
     });
@@ -72,3 +83,4 @@ describe('Tokopedia Search and Product Flow', function() {
     });
     
 });
+

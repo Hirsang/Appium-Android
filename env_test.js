@@ -1,6 +1,6 @@
 // otpService.js
 
-const SetValueSearch='jambu'
+const SetValueSearch='jambu air'
 const DetailProductSearch='jambu air khi ojok(New Varietas)'//produk yang dicari setelah di search
 const CategoryProduct= 'Taman'
 
