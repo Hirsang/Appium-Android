@@ -7,9 +7,11 @@ const FilterProduct = require("../pageobjects/filterproduct");
 const Seller = require("../pageobjects/seller");
 const { Searching } = require("../pageobjects/searching");
 const { Product } = require("../pageobjects/product");
+const Homepage = require("../pageobjects/homepage");
+
 
 describe('Tokopedia Search and Product Flow', function() {
-    let driver, onboarding, searching, product, seller, filterproduct;
+    let driver, onboarding, searching, product, seller, filterproduct, homepage;
 
     before(async function() {
         driver = await remote(Tokopedia);
@@ -18,6 +20,8 @@ describe('Tokopedia Search and Product Flow', function() {
         product = new Product(driver);
         seller = new Seller(driver);
         filterproduct = new FilterProduct(driver);
+        homepage = new Homepage(driver);
+
         console.log('Aplikasi Dibuka!');
     });
     addFeature('Feature: Tokopedia Search and Product Flow');
@@ -31,6 +35,7 @@ describe('Tokopedia Search and Product Flow', function() {
         await onboarding.clickSetNotification();
         await onboarding.AllowPermissionNotification();
         await driver.pause(1000);
+        
     });
 
     it('should search for product', async function() {
@@ -63,14 +68,23 @@ describe('Tokopedia Search and Product Flow', function() {
     });
 
     it('should share product', async function(){
-        addStep('Step 6: sahre products');
+        addStep('Step 6: share products');
         await product.shareproduct();
         await product.sharelink();
+        await product.backtolistsearch();
+        
+    })
+
+    it('check homepage', async function(){
+        addStep('Step 7: check tokopedia product');
+        await driver.pause(2000)
+        await searching.backtohomepage();
+        await homepage.checkproducttokopedia();
     })
 
     after(async function() {
         await driver.pause(2000)
-        await driver.deleteSession();
+        // await driver.deleteSession();
         console.log('Sesi dihentikan!');
     });
 

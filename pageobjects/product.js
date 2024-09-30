@@ -62,6 +62,11 @@ class Product{
     async sharelink(){
         await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/shareex_icon_channel").instance(2)').click();
     }
+
+    async backtolistsearch(){
+        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/nav_icon_back")').click();
+    }
+
 }
 
 module.exports={

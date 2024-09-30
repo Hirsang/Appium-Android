@@ -26,6 +26,10 @@ class Searching {
         await this.driver.pause(1000);
         await this.driver.$('//android.view.View[@content-desc="MainLazyColumn"]/android.view.View[1]').click();
     }
+
+    async backtohomepage(){
+        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/nav_icon_back")').click();
+    }
     
 }
 
