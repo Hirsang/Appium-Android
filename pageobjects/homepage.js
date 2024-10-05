@@ -5,7 +5,7 @@ class Homepage{
 
     async checkproducttokopedia() {
         const startX = 927; // X awal untuk scroll horizontal dari kanan
-        const startY = 545; // Y konstan karena tidak ada pergerakan vertikal
+        const startY = 750; // Y konstan karena tidak ada pergerakan vertikal
         const endX = 229; // X akhir untuk scroll (ke kiri)
 
         // Loop scroll

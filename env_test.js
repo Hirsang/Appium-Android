@@ -1,8 +1,8 @@
 // otpService.js
 
-const SetValueSearch='jambu air'
-const DetailProductSearch='jambu air khi ojok(New Varietas)'//produk yang dicari setelah di search
-const CategoryProduct= 'Taman'
+const SetValueSearch='jambu air merah'
+const DetailProductSearch='Jambu air citra kingrose merah 1kg'//produk yang dicari setelah di search
+const CategoryProduct= 'Buah'
 
 const Tokopedia = {
   logLevel: 'info',
