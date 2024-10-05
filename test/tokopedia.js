@@ -8,10 +8,11 @@ const Seller = require("../pageobjects/seller");
 const { Searching } = require("../pageobjects/searching");
 const { Product } = require("../pageobjects/product");
 const Homepage = require("../pageobjects/homepage");
+const Feature = require("../pageobjects/tokopediafeatured");
 
 
 describe('Tokopedia Search and Product Flow', function() {
-    let driver, onboarding, searching, product, seller, filterproduct, homepage;
+    let driver, onboarding, searching, product, seller, filterproduct, homepage, feature;
 
     before(async function() {
         driver = await remote(Tokopedia);
@@ -21,6 +22,8 @@ describe('Tokopedia Search and Product Flow', function() {
         seller = new Seller(driver);
         filterproduct = new FilterProduct(driver);
         homepage = new Homepage(driver);
+        feature = new Feature(driver);
+
 
         console.log('Aplikasi Dibuka!');
     });
@@ -29,6 +32,7 @@ describe('Tokopedia Search and Product Flow', function() {
 
     it('should complete the onboarding flow', async function() {
         addStep('Step 1: Onboarding flow');
+        await driver.pause(2000);
         await onboarding.clickOnboardingButton();
         await onboarding.AllowPermissionPhone();
         await onboarding.clickNavigateBack();
@@ -71,15 +75,25 @@ describe('Tokopedia Search and Product Flow', function() {
         addStep('Step 6: share products');
         await product.shareproduct();
         await product.sharelink();
+        await driver.pause(2000);
         await product.backtolistsearch();
         
     })
 
     it('check homepage', async function(){
-        addStep('Step 7: check tokopedia product');
+        addStep('Step 7: homepage tokopedia');
         await driver.pause(2000)
         await searching.backtohomepage();
         await homepage.checkproducttokopedia();
+    })
+    it('check all features tokopedia', async function(){
+        addStep('Step 7: check tokopedia product');
+        await homepage.checkproducttokopedia();
+        await feature.topfeatured();
+        await feature.gadgetorelectronic();
+        await driver.pause(1000);
+        await feature.backtohomepage();
+
     })
 
     after(async function() {
