@@ -33,11 +33,9 @@ describe('Tokopedia Search and Product Flow', function() {
     it('should complete the onboarding flow', async function() {
         addStep('Step 1: Onboarding flow');
         await driver.pause(2000);
-        await onboarding.clickOnboardingButton();
         await onboarding.AllowPermissionPhone();
+        await onboarding.clickOnboardingButton();
         await onboarding.clickNavigateBack();
-        await onboarding.clickSetNotification();
-        await onboarding.AllowPermissionNotification();
         await driver.pause(1000);
         
     });
@@ -58,17 +56,16 @@ describe('Tokopedia Search and Product Flow', function() {
         await seller.ListEtalase();
         await seller.ListFeed();
         await seller.ListProduct();
-        await seller.Getfilter();
+        
     });
 
     it('should filter products', async function() {
         addStep('Step 5: Filtering products');
         await seller.Getfilter();
-        await filterproduct.category();
-        await seller.Getfilter();
         await filterproduct.price();
         await filterproduct.submitfilter();
         await seller.BackToProduct();
+    
     });
 
     it('should share product', async function(){
@@ -76,8 +73,7 @@ describe('Tokopedia Search and Product Flow', function() {
         await product.shareproduct();
         await product.sharelink();
         await driver.pause(2000);
-        await product.backtolistsearch();
-        
+        await product.backtosearchpage();
     })
 
     it('check homepage', async function(){
@@ -93,12 +89,11 @@ describe('Tokopedia Search and Product Flow', function() {
         await feature.gadgetorelectronic();
         await driver.pause(1000);
         await feature.backtohomepage();
-
     })
 
     after(async function() {
         await driver.pause(2000)
-        // await driver.deleteSession();
+        await driver.deleteSession();
         console.log('Sesi dihentikan!');
     });
 
