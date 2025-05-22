@@ -4,15 +4,15 @@ class Seller{
     }
 
     async ListEtalase(){
-        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd.df_base:id/tab_icon_layout").instance(1)').click();
+        await this.driver.$('android=new UiSelector().text("Etalase")').click();
     }
 
     async ListFeed(){
-        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd.df_base:id/tab_icon_layout").instance(2)').click();
+        await this.driver.$('android=new UiSelector().text("Feed")').click();
     }
 
     async ListProduct(){
-        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd.df_base:id/shop_page_dynamic_tab_view_icon").instance(0)').click();
+        await this.driver.$('android=new UiSelector().text("Produk")').click();
     }
 
     async Getfilter(){
