@@ -2,7 +2,7 @@
 
 const SetValueSearch='Lock n Lock Belt One Piece'
 const DetailProductSearch='               LocknLock Belt Tumbler One Piece Edition LocknLock - Monkey D. Luffy'//produk yang dicari setelah di search
-const CategoryProduct= 'Buah'
+
 const Tokopedia = {
   logLevel: 'info',
   path: '/',

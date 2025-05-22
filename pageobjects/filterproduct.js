@@ -84,10 +84,10 @@ class FilterProduct{
 
             if (elementExists) {
                 await minamount.click();
-                await minamount.setValue(10000);
+                await minamount.setValue(100000);
 
                 await maxamount.click();
-                await maxamount.setValue(50000);
+                await maxamount.setValue(200000);
                 console.log('Elemen ditemukan dan diklik.');
             } else {
                 console.log(`Scroll ${scrollCount + 1} dilakukan, elemen belum ditemukan.`);
