@@ -60,10 +60,10 @@ class Product{
     }
 
     async sharelink(){
-        await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/shareex_icon_channel").instance(2)').click();
+        await this.driver.$('android=new UiSelector().text("Salin Link")').click();
     }
 
-    async backtolistsearch(){
+    async backtosearchpage(){
         await this.driver.$('android=new UiSelector().resourceId("com.tokopedia.tkpd:id/nav_icon_back")').click();
     }
 
