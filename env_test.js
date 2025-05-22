@@ -24,5 +24,4 @@ module.exports={
     Tokopedia,
     SetValueSearch,
     DetailProductSearch,
-    CategoryProduct
 }
