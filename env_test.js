@@ -1,9 +1,8 @@
 // otpService.js
 
-const SetValueSearch='jambu air merah'
-const DetailProductSearch='Jambu air citra kingrose merah 1kg'//produk yang dicari setelah di search
+const SetValueSearch='Lock n Lock Belt One Piece'
+const DetailProductSearch='               LocknLock Belt Tumbler One Piece Edition LocknLock - Monkey D. Luffy'//produk yang dicari setelah di search
 const CategoryProduct= 'Buah'
-
 const Tokopedia = {
   logLevel: 'info',
   path: '/',
@@ -14,7 +13,7 @@ const Tokopedia = {
       'appium:noReset': false,
       'appium:newCommandTimeout': 3688,
       'appium:appPackage': 'com.tokopedia.tkpd',
-      'appium:appActivity': 'com.tokopedia.navigation.presentation.activity.NewMainParentActivity'
+      'appium:appActivity': '.ConsumerSplashScreen'
   }
 };
 
